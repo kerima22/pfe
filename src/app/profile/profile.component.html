@@ -1,0 +1,158 @@
+<div >
+
+  <!-- For demo purpose -->
+  <div class="row mb-4">
+    <div class="col-lg-8 mx-auto text-center">  <br> <br> <br>
+      <h1 class="display-4">Consulter mon Profile </h1>
+    </div>
+  </div>
+  <!-- End -->
+
+
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="bg-white rounded-lg shadow-sm p-5">
+        <!-- Credit card form tabs -->
+        <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+          <li class="nav-item">
+            <a data-toggle="pill" class="nav-link rounded-pill" routerLink="/conge">
+                               
+                                Congés
+                            </a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="pill" class="nav-link rounded-pill"   routerLink="/autorisation">
+              <i class="fa fa-credit-card"></i>
+                                Autorisation
+                            </a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-bank" class="nav-link active rounded-pill" routerLink="/profile" >
+              <i class="fa fa-user"></i>
+                                 Profile
+                             </a>
+          </li>
+
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill" routerLink="/mesconges" >
+              <i class="fa fa-list"></i> 
+
+                                 Mes Congés
+                             </a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill" routerLink="/mesautorisations" >
+              <i class="fa fa-list"></i> 
+
+                                 Mes Autorisations
+                             </a>
+                            </li>
+                             <li class="nav-item">
+                              <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill" routerLink="/chef" >
+                                <i class="fa fa-user"></i>
+                                                  Gestion des demandes 
+                                               </a>
+                            </li>
+                                             
+          
+        
+        
+        </ul>
+        <!-- End -->
+        
+        <section style="background-color: #eee;">
+          <div class="container py-5">
+            
+        
+              
+              <div >
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Matricule</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0"> {{profile.matriculeP}} </p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Nom</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0"> {{profile.nom}}</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Prénom</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0"> {{profile.prenom}}</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Email</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0"> {{profile.email}}</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Téléphone</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0"> {{profile.numTel}}</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Département</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0"> {{profile.departement}}</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Poste</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0"> {{profile.poste}}</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Role</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0"> {{profile.role.nomRole}}</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Solde Congé</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0"> {{fg.value.solde}}</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                
+              </div>
+            
+          </div>
+        </section>

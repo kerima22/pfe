@@ -1,0 +1,12 @@
+body{
+    background: url("C:/Users/Kerim/OneDrive/Bureau/blanchee.png");
+    background-size:100%;
+    background-image:linear-gradient();
+    background-position: 'center';
+     position: 'relative';
+     backdrop-filter: blur(5px);
+}
+.blur-bg {
+    filter: blur(5px);
+  }
+  

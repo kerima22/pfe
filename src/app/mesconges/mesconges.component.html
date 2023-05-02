@@ -1,0 +1,157 @@
+<div >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+
+    <!-- For demo purpose -->
+    <div class="row mb-4">
+      <div class="col-lg-8 mx-auto text-center">  <br> <br> <br>
+        <h1 class="display-4">Mes congés </h1>
+      </div>
+    </div>
+    <!-- End -->
+  
+  
+    <div class="row">
+      <div class="col-lg-7 mx-auto">
+        <div class="bg-white rounded-lg shadow-sm p-5">
+          <!-- Credit card form tabs -->
+          <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+            <li class="nav-item">
+              <a data-toggle="pill" class="nav-link rounded-pill" routerLink="/conge">
+                                 
+                                  Congés
+                              </a>
+            </li>
+            <li class="nav-item">
+              <a data-toggle="pill" class="nav-link rounded-pill"   routerLink="/autorisation">
+                <i class="fa fa-credit-card"></i>
+                                  Autorisation
+                              </a>
+            </li>
+            <li class="nav-item">
+              <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill" routerLink="/profile" >
+                <i class="fa fa-list"></i> 
+
+                                   Profile
+                               </a>
+            </li>
+
+            <li class="nav-item">
+                <a data-toggle="pill" href="#nav-tab-bank" class="nav-link active rounded-pill" routerLink="/mesconges" >
+                  <i class="fa fa-list"></i> 
+
+                                     Mes Congés
+                                 </a>
+              </li>
+
+              <li class="nav-item">
+                <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill" routerLink="/mesautorisations" >
+                  <i class="fa fa-list"></i> 
+
+                                     Mes Autorisations
+                                 </a>
+              </li>
+            <li class="nav-item">
+              <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill" routerLink="/chef" >
+                <i class="fa fa-user"></i>
+                                  Gestion des demandes 
+                               </a>
+            </li>
+          </ul>
+          <!-- End -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Matricule</th>
+                <th scope="col">Type Congé</th>
+                <th scope="col">Date Demande</th>
+                <th scope="col">Date Début</th>
+                <th scope="col">Date Fin</th>
+                <th scope="col">Durée</th>
+                <th scope="col">Statut</th>
+                <th scope="col">Cause</th>
+                <th scope="col">Action</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+                
+                
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let demande of conge">
+                <th scope="row" >{{ demande.matriculeP}}</th>
+                <td>{{demande.typeConge.nomTypeconConge}}</td>
+                <td>{{ demande.datedemande}}</td>
+                <td>{{ demande.dateDebut}}</td>
+                <td>{{ demande.dateFin}}</td>
+                <td>{{ demande.duree}}</td>
+                <td>{{ demande.statut}}</td>
+                <td>{{ demande.cause}}</td>
+                <td>
+                  <a (click)="open(content)" class="modifier" title="modifier" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                  <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+              </td>
+                
+                
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td><td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <hr>
+                 
+
+            </tbody>
+          </table>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Solde Congé</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0"> solde</p>
+            </div>
+          </div>
+        

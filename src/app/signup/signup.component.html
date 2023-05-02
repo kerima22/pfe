@@ -1,0 +1,174 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card bg-secondary shadow border-0">
+            <div class="card-header bg-white pb-5">
+              <div class="text-muted text-center mb-3">
+                <small>Se connecter avec</small>
+              </div>
+              <div class="text-center">
+                <a href="https://www.google.com/intl/fr/gmail/about/" class="btn btn-neutral btn-icon">
+                  <span class="btn-inner--icon">
+                    <img src="./assets/img/icons/common/google.svg">
+                  </span>
+                  <span class="btn-inner--text">Google</span>
+                </a>
+              </div>
+            </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <small>Ou inscrivez-vous avec vos identifiants </small>
+              </div>
+              <form  [formGroup]="fg">
+                <div class="form-group" >
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" formControlName="nom" placeholder="Nom" type="text" id="validationTextarea">
+                    <div *ngIf="fg.get('nom').invalid && (fg.get('nom').dirty || fg.get('nom').touched)" class="error">
+                      <div class="form-control" *ngIf="fg.get('nom').hasError('required')">Le nom est obligatoire.</div>
+                      <div class="form-control" *ngIf="fg.get('nom').hasError('pattern')">Le nom ne peut contenir que des lettres et des espaces.</div>
+                  </div>
+                  </div></div>
+
+
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="Prénom" formControlName="prenom" type="text">
+                   
+                      <div class="form-control" *ngIf="fg.get('prenom').invalid && (fg.get('prenom').dirty || fg.get('prenom').touched)" class="error" style="height: 4em;">
+                        <div class="form-control" *ngIf="fg.get('prenom').hasError('required')">Le prénom est obligatoire.</div>
+                        <div class="form-control" *ngIf="fg.get('prenom').hasError('pattern')">Le prénom ne peut contenir que des lettres et des espaces.</div>
+                      </div> 
+                    </div>
+                  </div>
+                  
+
+
+                <div class="form-group"> 
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <select class="form-control" formControlName="departement" >
+                      <option value="" selected disabled hidden> Departement</option>
+                      
+                      <option> Developpement</option>
+                      <option> Marketing </option>
+                      <option>Option 4</option>
+                      <option>Option 5</option>
+                    </select>
+                  </div>
+                </div>
+                
+
+
+
+                <div class="form-group"> 
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <select class="form-control" formControlName="poste" >
+                      <option value="" selected disabled hidden>Poste</option>
+                      <option>developpement</option>
+                      <option>Option 2</option>
+                      <option>Option 3</option>
+                      <option>Option 4</option>
+                      <option>Option 5</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="form-group" >
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" formControlName="numTel" placeholder="Numéro de téléphone" type="tel" >
+                    <div *ngIf="fg.controls['numTel'].invalid && (fg.controls['numTel'].dirty || fg.controls['numTel'].touched)">
+                      <div class="form-control" *ngIf="fg.controls['numTel'].hasError('required')">Ce champ est obligatoire.</div>
+                      <div class="form-control" *ngIf="fg.controls['numTel'].hasError('pattern')">Ce champ doit contenir 8 chiffres.</div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="form-group" >
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" formControlName="email" placeholder="Email" type="email" >
+                    <div  *ngIf="fg.get('email').invalid && (fg.get('email').dirty || fg.get('email').touched)">
+                    <div class="form-control" *ngIf="fg.get('email').hasError('required')">L'e-mail est obligatoire.</div>
+                  <div class="form-control" *ngIf="fg.get('email').hasError('email')">L'e-mail n'est pas valide.</div>
+                </div>
+                  </div>
+                </div>
+                
+
+
+                <div class="form-group" >
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control"formControlName="password" placeholder="Password" type="password" >
+
+                <div *ngIf="fg.get('password').invalid && (fg.get('password').dirty || fg.get('password').touched)" class="error">
+                  <div class="form-control" *ngIf="fg.get('password').errors.required">Le mot de passe est obligatoire.</div>
+                  <div class="form-control" *ngIf="fg.get('password').errors.minlength">Le mot de passe doit contenir au moins 6 caractères.</div>
+                </div>
+              </div>
+          </div>
+
+
+
+
+                <div class="text-muted font-italic">
+                  <small>password strength:
+                    <span class="text-success font-weight-700">strong</span>
+                  </small>
+                </div>
+                <div class="row my-4">
+                  <div class="col-12">
+                    <div class="custom-control custom-control-alternative custom-checkbox">
+                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                      <label class="custom-control-label" for="customCheckRegister">
+                        <span>I agree with the
+                          <a href="javascript:void(0)">Privacy Policy</a>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button  type="submit"  class="btn btn-primary mt-4"  (click)="register()">Créer un compte</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

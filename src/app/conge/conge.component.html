@@ -1,0 +1,137 @@
+<div >
+
+    <!-- For demo purpose -->
+    <div class="row mb-4">
+      <div class="col-lg-8 mx-auto text-center">  <br> <br> <br>
+        <h1 class="display-4">Créer une nouvelle demande de congés</h1>
+      </div>
+    </div>
+    <!-- End -->
+  
+  
+    <div class="row">
+      <div class="col-lg-7 mx-auto">
+        <div class="bg-white rounded-lg shadow-sm p-5">
+          <!-- Credit card form tabs -->
+          <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+            <li class="nav-item">
+              <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill" routerLink="/conge">
+                                  <i class="fa fa-credit-card"></i>
+                                  Congés
+                              </a>
+            </li>
+            <li class="nav-item">
+              <a data-toggle="pill" href="#nav-tab-paypal" class="nav-link rounded-pill" routerLink="/autorisation">
+                <i class="fa fa-credit-card"></i>
+                                  Autorisation
+                              </a>
+            </li>
+            <li class="nav-item">
+              <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill" routerLink="/profile">
+                <i class="fa fa-user"></i>
+                                   Profile
+                               </a>
+
+            </li>
+
+            <li class="nav-item">
+              <a data-toggle="pill" href="#nav-tab-bank" class="nav-link  rounded-pill" routerLink="/mesconges" >
+                <i class="fa fa-list"></i> 
+
+                                   Mes Congés
+                               </a>
+            </li>
+            <li class="nav-item">
+              <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill" routerLink="/mesautorisations" >
+                <i class="fa fa-list"></i> 
+
+                                   Mes Autorisations
+                               </a>
+            </li>
+            <li class="nav-item">
+              <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill" routerLink="/chef" >
+                <i class="fa fa-user"></i>
+                                  Gestion des demandes 
+                               </a>
+            </li>
+            
+
+           
+          </ul>
+          <!-- End -->
+  
+  
+          <!-- Credit card form content -->
+          <div class="tab-content">
+  
+            <!-- credit card info-->
+            <div id="nav-tab-card" class="tab-pane fade show active">
+
+              <form  [formGroup]="fg" >
+                <div class="form-group">
+                  <label for="username">Date de début</label>
+                  <input type="date" formControlName="dateDebut" name="username"  required class="form-control" (change)="onDateChange()">
+                </div>
+                <div class="form-group">
+                  <label >Date de Fin</label>
+                  <div class="input-group">
+                    <input type="date" formControlName="dateFin" class="form-control" required (change)="onDateChange()">
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="form-group">
+                      <label><span class="hidden-xs">Type de Congés</span></label>
+                      <div class="input-group">
+                        <select formControlName="typeConge" class="form-control" >
+                            <option value="1">Maladie</option>
+                            <option value="2">Annuell</option>
+                            <option value="3">Maternité</option>
+                            <option value="4">Paternité</option>
+                            <option value="5">Sans solde</option>
+                            <option value="6">Autre </option>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group mb-4">
+                      <label data-toggle="tooltip" title="Three-digits code on the back of your card">Durée
+                                              </label>
+                      <input type="text" formControlName="duree"  required class="form-control" (change)="calculateDuration()">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-8">
+                      <div class="form-group">
+                        <label><span class="hidden-xs">Statut</span></label>
+                        <div class="input-group">
+                          <select formControlName="statut" class="form-control" >
+                              <option>Demande en attente</option>
+                              
+                              
+                            </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group mb-4">
+                        <label data-toggle="tooltip" title="Three-digits code on the back of your card">Cause
+                                                </label>
+                        <input type="text" formControlName="cause" required class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm" (click)="DemandeConge()"> Envoyer votre Demande  </button>
+              </form>
+            </div>
+            <!-- End -->
+  
+            
+  
+            
+  
+        </div>
